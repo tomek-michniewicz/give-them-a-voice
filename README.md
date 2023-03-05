@@ -12,6 +12,11 @@ There was an untold story of poverty, exploitation and human tragedy in Congo, h
 
 As this hackathon theme is "taking action" and is organized in the month of "International Women's Day" - the idea is to use technology to help at least with some part of this very complicated problem.
 
+## Demo
+
+Client part: https://give-them-a-voice-client.web.app
+Hub part: https://give-them-a-voice.web.app
+
 ## Problem
 
 ...
@@ -29,8 +34,10 @@ As this hackathon theme is "taking action" and is organized in the month of "Int
 
 ## Links
 
-- https://twitter.com/siddharthkara
 - https://avanade-iwd.devpost.com/
+
+- https://twitter.com/siddharthkara
+- 
 
 ## Resources
 
