@@ -1,6 +1,6 @@
 # Give Them a Voice
 
-This project was created during [Avanade International Women's Day Hackathon](https://avanade-iwd.devpost.com/)
+This project was created during [Avanade International Women's Day Hackathon](https://avanade-iwd.devpost.com/) in March 2023.
 
 ## Project description
 
@@ -8,40 +8,79 @@ This project was created during [Avanade International Women's Day Hackathon](ht
 
 The inspiration for this project was a podcast with Siddharth Kara - an author of "Cobalt Red: How The Blood of The Congo Powers Our Lives".
 
-There was an untold story of poverty, exploitation and human tragedy in Congo, happening right now. There are people, many of them women, young women living and working in sub-human conditions.
+There was an untold story of poverty, exploitation and human tragedy in Congo, happening right now. There are people, many of them women, young women and kids living and working in sub-human conditions.
 
-As this hackathon theme is "taking action" and is organized in the month of "International Women's Day" - the idea is to use technology to help at least with some part of this very complicated problem.
+>"An increasing number of women, girls, and boys live in these [mining] camps and work at the mining sites throughout all stages of the operating process. The living conditions of these camps are inhumane and the human rights violations are extensive. There is no safe access to water, food, education, and health, including sexual and reproductive health. Women often engage in the most toxic job at the mining sites: “droumage” - crushing, sorting, washing, processing, and/or selling minerals."
+
+As this hackathon theme is "taking action" and is organized in the month of "International Women's Day" - I wanted to explore the question if A-powered solution could, at least in  some small way, help with this very complicated problem.
+
+#### Internet sources
+
+- https://www.npr.org/sections/goatsandsoda/2023/02/01/1152893248/red-cobalt-congo-drc-mining-siddharth-kara
+- https://www.peacewomen.org/resource/case-study-corporations-peace-and-gender-equality-drc
+- https://wilpf.org/wp-content/uploads/2016/10/WomenInArtisanalMinesInDRC_web.pdf
+- https://www.youtube.com/watch?v=Hmqf0L52rD8
 
 ## Demo
 
 Client part: https://give-them-a-voice-client.web.app
+
 Hub part: https://give-them-a-voice.web.app
+
+TODO: video
 
 ## Problem
 
-...
+There are two sides that are the focus of this project: people that need help and organizations that could provide aid.
 
 ### What people need
 
 - to be heard
-- to get hope
-- overcome depression (?) and inability to act - get hope there are some actions possible (many times people don't know how or what to do, believe any action is doomed or hopeless - especially those against corrupt government, military, gangs, etc.)
-- it's hard to find outside help being in a situation like this
+- to have hope that their current condition can improve
+- overcome and inability to act, feel that there are some actions possible (many times people don't know how or what to do, they believe any action is hopeless - especially those against corrupt government, military, gangs, etc.)
+- a way to find help and share their stories
+
+### What organizations need
+
+- better insights of what kind of problem people have and where
+- many NGOs, health providers, etc. are understaffed and have very limited financial resources - so the bottleneck may be with processing all the inquires from the people (as it is done manually with limited amount of people)
 
 ## Solution
 
-...
+This project is exploring a question: does using AI could help with people being heard and meaningful actions being taken.
+
+The are two parts of the solution: client and hub. Please look at the "Demo" section for links and examples.
+
+### Client app
+
+- record a person's story and send it to the hub
+- hub automatically transcribe it into text (AI), could also translate, if needed
+- optionally, based on the transcription and the knowledge base of the hub, a person could get an automated feedback: meaningful actions, contact information for aid providers, etc. (powered by chat and embeddings AI)
+
+### Hub app
+
+- keeps the transcriptions of the voice recordings send by people
+- allows to run multiple analysis on every transcription. Some of them can be done automatically right after the transcript is ready and actions could be automatically taken (ie. sending messages, notifying the right people, etc.)
+- as analysis are simply a questions in natural language for the chat AI, anyone could easily add them and not special technology knowledge is required
+- hub can keep the knowledge base of the previous actions taken, useful contact information, etc. that grows over time, so the requests could be better served and providing aid could be more efficient
+
+### How the system works
+
+TODO: diagram
 
 ## Links
 
 - https://avanade-iwd.devpost.com/
 
-- https://twitter.com/siddharthkara
-- 
+- https://www.npr.org/sections/goatsandsoda/2023/02/01/1152893248/red-cobalt-congo-drc-mining-siddharth-kara
+- https://www.peacewomen.org/resource/case-study-corporations-peace-and-gender-equality-drc
+- https://wilpf.org/wp-content/uploads/2016/10/WomenInArtisanalMinesInDRC_web.pdf
+- https://www.youtube.com/watch?v=Hmqf0L52rD8
+- https://twitter.com/siddharthkara 
 
 ## Resources
 
-### First-hand account examples
+### First-hand account examples used in the demo
 
 #### Account (1)
 
