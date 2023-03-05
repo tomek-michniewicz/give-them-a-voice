@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <Container maxW="container.xl"  p="6" rounded="md" bg="white" mt={8}>
+    <Container maxW="container.xl" p="6" rounded="md" bg="white" mt={8}>
       <Flex>
         <Box flex="1" mr="24px">
           <Heading as="h4" size="sm" mb={4} color={"gray.600"}>
