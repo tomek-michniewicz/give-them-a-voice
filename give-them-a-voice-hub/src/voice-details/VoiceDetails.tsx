@@ -16,15 +16,24 @@ function VoiceDetails(props: VoiceDetailsProps) {
   }
 
   const voice = VOICES.find((voice) => voice.uid === props.uid);
-  const transcriptionParagraphs = voice?.transcription.split('\n');
+  const transcriptionParagraphs = voice?.transcription.split("\n");
 
   return (
     <Box>
       <Heading as="h4" size="md" mb={4}>
+        Recording
+      </Heading>
+      <audio controls src={voice?.recording}>
+        <a href={voice?.recording}>Download audio</a>
+      </audio>
+
+      <Heading as="h4" size="md" mt={8} mb={4}>
         Transcription
       </Heading>
-      {transcriptionParagraphs?.map((paragraph) => (  
-        <Text mb={2}>{paragraph}</Text>
+      {transcriptionParagraphs?.map((paragraph, idx) => (
+        <Text mb={2} key={idx}>
+          {paragraph}
+        </Text>
       ))}
     </Box>
   );

@@ -13,12 +13,16 @@ function App() {
   };
 
   return (
-    <Container maxW="container.xl" boxShadow="md" p="6" rounded="md" bg="white" mt={8}>
+    <Container maxW="container.xl"  p="6" rounded="md" bg="white" mt={8}>
       <Flex>
         <Box flex="1" mr="24px">
+          <Heading as="h4" size="sm" mb={4} color={"gray.600"}>
+            Recordings List
+          </Heading>
           <VoicesList onSelect={onSelect} />
         </Box>
-        <Box flex="2">
+        <Box w="1px" bgColor={"gray.200"} />
+        <Box flex="2" ml="32px">
           <VoiceDetails uid={selectedVoiceUid} />
         </Box>
       </Flex>

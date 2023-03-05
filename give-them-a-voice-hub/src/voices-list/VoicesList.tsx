@@ -22,7 +22,7 @@ function VoicesList(props: VoicesListProps) {
     <Box>
       {VOICES.map((voice) => (
         <Box key={voice.uid} className="clickable" px={3} py={2} bgColor={(selectedVoiceUid == voice.uid) ? "blue.50" : "none"} onClick={() => onSelect(voice.uid)}>
-          <Text pb={1} fontWeight="600">
+          <Text pb={1} fontWeight="600" color={"blue.600"}>
             {voice.date}
           </Text> 
                   
