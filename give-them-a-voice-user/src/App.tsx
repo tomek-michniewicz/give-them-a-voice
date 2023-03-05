@@ -35,7 +35,7 @@ function App() {
         bg="white"
         centerContent
       >
-        <audio src={audioUrl} controls />
+        <audio src={audioUrl as string} controls />
         <Stack direction="row" spacing={4} mt={4}>
           <Button
             leftIcon={<MdFiberManualRecord />}
@@ -43,7 +43,7 @@ function App() {
             colorScheme="red"
             variant="solid"
             isDisabled={!!isRecording}
-            onClick={startRecording}
+            onClick={startRecording as any}
           >
             Record
           </Button>
@@ -53,7 +53,7 @@ function App() {
             colorScheme="white"
             variant="outline"
             isDisabled={!isRecording}
-            onClick={stopRecording}
+            onClick={stopRecording as any}
           >
             Stop
           </Button>
