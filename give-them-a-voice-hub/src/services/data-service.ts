@@ -7,29 +7,6 @@ export interface AnalysisUI extends Analysis {
   response: string;
 }
 
-// AnalysisResponse
-// {
-//   "id": "chatcmpl-6p5FEv1JHictSSnDZsGU4KvbuBsbu",
-//   "object": "messages",
-//   "created": 1677693600,
-//   "model": "gpt-3.5-turbo",
-//   "choices": [
-//     {
-//       "index": 0,
-//       "finish_reason": "stop",
-//       "message": {
-//         "role": "assistant",
-//         "content": "OpenAI's mission is to ensure that artificial general intelligence benefits all of humanity."
-//       }
-//     }
-//   ],
-//   "usage": {
-//     "prompt_tokens": 20,
-//     "completion_tokens": 18,
-//     "total_tokens": 38
-//   }
-// }
-
 export interface AnalysisResponse {
   id: string;
   object: string;
@@ -54,7 +31,7 @@ export interface AnalysisResponse {
 
 export class DataService {
 
-  async runAnalysis(analysis: any): Promise<Partial<AnalysisResponse>> {
+  async runAnalysis(analysis: Analysis, text: string): Promise<Partial<AnalysisResponse>> {
 
     return Promise.resolve({
       choices: [

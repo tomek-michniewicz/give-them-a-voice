@@ -32,4 +32,20 @@ export const VOICES = [
   },
 ];
 
-export const ANALYSIS = [{ name: "Identify the problem", prompt: "111" }, { name: "Find help", prompt: "222" }];
+export const ANALYSIS = [
+  {
+    name: "Identify the problem",
+    prompt:
+      "Identify the person's problem and write a one paragraph summary:\n",
+  },
+  {
+    name: "Possible actions",
+    prompt:
+      "Create a short list (maximum 3 items) of meaningful and reasonable actions for a person in Democratic Republic of Congo. Write it in first person, base it on this text:\n",
+  },
+  {
+    name: "Find help",
+    prompt:
+      'Based on the text below, select exactly three items from this array ["health", "finances", "pollution", "poverty", "education", "domestic violence", "corruption",  "other"] and rank them. Return as comma separated string. Text:',
+  },
+];
