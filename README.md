@@ -29,6 +29,11 @@ Hub part: https://give-them-a-voice.web.app
 
 TODO: video
 
+### Screenshots
+
+![hub](https://firebasestorage.googleapis.com/v0/b/give-them-a-voice.appspot.com/o/2023-03-05%2021_50_27-Give%20Them%20a%20Voice%20-%20Hub.png?alt=media&token=4a3380c4-1144-44d9-9429-1581101f8ba4)
+
+![client](https://firebasestorage.googleapis.com/v0/b/give-them-a-voice.appspot.com/o/2023-03-05%2021_50_13-Give%20Them%20a%20Voice%20-%20User.png?alt=media&token=01432557-9840-4519-aea4-17616ea1b277)
 ## Problem
 
 There are two sides that are the focus of this project: people that need help and organizations that could provide aid.
@@ -67,6 +72,7 @@ The are two parts of the solution: client and hub. Please look at the "Demo" sec
 ### How the system works
 
 TODO: diagram
+
 
 ## Links
 
