@@ -18,8 +18,8 @@ function App() {
   const { isOpen, onOpen } = useDisclosure();
   let [audioUrl, isRecording, startRecording, stopRecording] = useRecorder();
 
-  const sendRecording = () => {
-    addVoiceRecording({
+  const sendRecording = async () => {
+    await addVoiceRecording({
       uid: uuidv4(),
       recording: audioUrl as string,
       transcription: "This is just a demo project. In the full version, your voice recording would replace this message",
