@@ -27,13 +27,14 @@ Client part: https://give-them-a-voice-client.web.app
 
 Hub part: https://give-them-a-voice.web.app
 
-TODO: video
+Video: https://www.youtube.com/watch?v=W0u1tdWMuVQ
 
 ### Screenshots
 
 ![hub](https://firebasestorage.googleapis.com/v0/b/give-them-a-voice.appspot.com/o/2023-03-05%2021_50_27-Give%20Them%20a%20Voice%20-%20Hub.png?alt=media&token=4a3380c4-1144-44d9-9429-1581101f8ba4)
 
 ![client](https://firebasestorage.googleapis.com/v0/b/give-them-a-voice.appspot.com/o/2023-03-05%2021_50_13-Give%20Them%20a%20Voice%20-%20User.png?alt=media&token=01432557-9840-4519-aea4-17616ea1b277)
+
 ## Problem
 
 There are two sides that are the focus of this project: people that need help and organizations that could provide aid.
@@ -69,10 +70,12 @@ The are two parts of the solution: client and hub. Please look at the "Demo" sec
 - as analysis are simply a questions in natural language for the chat AI, anyone could easily add them and not special technology knowledge is required
 - hub can keep the knowledge base of the previous actions taken, useful contact information, etc. that grows over time, so the requests could be better served and providing aid could be more efficient
 
-### How the system works
+### How it works
 
-TODO: diagram
-
+- user records their voice in the client app
+- recording is sent to the server
+- server uses speech-to-text AI to transcribe the voice and stores the result
+- either automatically after the transcription is ready, or manually from the hub app, a chat completion AI is used to ask user-defined question about the transcription. The results are stored in the database and displayed in the hub app.
 
 ## Links
 
