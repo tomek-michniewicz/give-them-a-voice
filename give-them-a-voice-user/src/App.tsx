@@ -5,19 +5,26 @@ import {
   Fade,
   Heading,
   Stack,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { MdFiberManualRecord, MdOutlineStopCircle } from "react-icons/md";
 import useRecorder from "./hooks/useRecorder";
+import { v4 as uuidv4 } from 'uuid';
 
 import "./App.css";
+import { addVoiceRecording } from "./services/firebase-service";
 
 function App() {
   const { isOpen, onOpen } = useDisclosure();
   let [audioUrl, isRecording, startRecording, stopRecording] = useRecorder();
 
   const sendRecording = () => {
+    addVoiceRecording({
+      uid: uuidv4(),
+      recording: audioUrl as string,
+      transcription: "This is just a demo project. In the full version, your voice recording would replace this message",
+      date: new Date().toISOString(),
+    });
     onOpen();
   };
 
