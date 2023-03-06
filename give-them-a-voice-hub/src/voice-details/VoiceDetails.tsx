@@ -13,6 +13,7 @@ import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
 import { voiceRecordingsAtom } from "../App";
 import { ANALYSIS } from "../data";
+import Paragraphs from "../paragraphs/Paragraphs";
 import { AnalysisUI, dataService } from "../services/data-service";
 
 import "./VoiceDetails.css";
@@ -41,7 +42,6 @@ function VoiceDetails(props: VoiceDetailsProps) {
   }
 
   const voice = voiceRecordings.find((voice) => voice.uid === props.uid);
-  const transcriptionParagraphs = voice?.transcription.split("\n");
 
   return (
     <Box>
@@ -54,11 +54,7 @@ function VoiceDetails(props: VoiceDetailsProps) {
       <Heading as="h4" size="md" mt={8} mb={4}>
         Transcription
       </Heading>
-      {transcriptionParagraphs?.map((paragraph: string, idx: number) => (
-        <Text mb={2} key={idx}>
-          {paragraph}
-        </Text>
-      ))}
+      <Paragraphs text={voice?.transcription} />
 
       {analysisList.length > 0 &&
         analysisList.map((item, idx) => {
@@ -78,7 +74,7 @@ function VoiceDetails(props: VoiceDetailsProps) {
                   </svg>
                 </Tooltip>
               </Heading>
-              <Text mb={2}>{item.response}</Text>
+              <Paragraphs text={item.response} />
             </Box>
           );
         })}

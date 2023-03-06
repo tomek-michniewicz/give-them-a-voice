@@ -11,14 +11,14 @@ export const voiceRecordingsAtom = atom([])
 
 function App() {
   const [selectedVoiceUid, setSelectedVoiceUid] = useState<string | null>(null);
-  const [voiceRecordings, setVoiceRecordings ] = useAtom<any[]>(voiceRecordingsAtom);
+  const [voiceRecordings, setVoiceRecordings ] = useAtom(voiceRecordingsAtom);
 
   useEffect(() => {
     onSnapshot(collection(db, "voices"), (snap) => {
       const results = snap.docs.map((doc) => {
         return doc.data();
       });
-      setVoiceRecordings(results);
+      setVoiceRecordings(results as any);
     });
 
   }, []);
