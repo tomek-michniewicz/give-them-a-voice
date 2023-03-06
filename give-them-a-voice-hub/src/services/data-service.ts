@@ -56,6 +56,11 @@ export class DataService {
         body: JSON.stringify(request),
       }
     );
+    
+    if (!response.ok) {
+      throw new Error('OpenAI API call failed. Maybe the API key is invalid?');
+    }
+
     const responseJson = await response.json();
     return responseJson;
   }

@@ -3,6 +3,7 @@ import {
   Button,
   Center,
   Heading,
+  Spinner,
   Stack,
   Text,
   Tooltip,
@@ -12,12 +13,15 @@ import { useEffect, useState } from "react";
 import { ANALYSIS, VOICES } from "../data";
 import { AnalysisUI, dataService } from "../services/data-service";
 
+import "./VoiceDetails.css";
+
 export interface VoiceDetailsProps {
   uid: string | null;
 }
 
 function VoiceDetails(props: VoiceDetailsProps) {
   const [analysisList, setAnalysisList] = useState<AnalysisUI[]>([]);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
   const toast = useToast();
 
   useEffect(() => {
@@ -80,13 +84,25 @@ function VoiceDetails(props: VoiceDetailsProps) {
         <Heading as="h4" size="md" mt={8} mb={4}>
           Run Analysis
         </Heading>
-        <Stack direction="row" spacing={4} mt={4}>
+        <Stack
+          direction="row"
+          spacing={4}
+          mt={4}
+          style={{ position: "relative" }}
+        >
+          {isAnalyzing && (
+            <Stack direction="row" id="loading">
+              <Spinner thickness="3px" color={"blue.400"} />
+              <Text ml={2}>Working..</Text>
+            </Stack>
+          )}
           {ANALYSIS.map((analysis) => {
             return (
               <Button
                 colorScheme="blue"
                 key={analysis.name}
                 onClick={async () => {
+                  setIsAnalyzing(true);
                   try {
                     const result = await dataService.runAnalysis(
                       analysis,
@@ -107,6 +123,8 @@ function VoiceDetails(props: VoiceDetailsProps) {
                       status: "error",
                       variant: "subtle",
                     });
+                  } finally {
+                    setIsAnalyzing(false);
                   }
                 }}
               >
