@@ -31,32 +31,33 @@ export interface AnalysisResponse {
 
 export class DataService {
 
+  // Put the OpenAI API key here
+  OPENAI_API_KEY = '';
+
   async runAnalysis(analysis: Analysis, text: string): Promise<Partial<AnalysisResponse>> {
 
-    return Promise.resolve({
-      choices: [
-        {
-          message: {
-            role: "assistant",
-            content: `Resp: ${analysis.name}`
-          },
-          finish_reason: "stop",
-          index: 0
-        }
-      ],
-    });
+    if (this.OPENAI_API_KEY === '') {
+      throw new Error('OpenAI API key is not set. Please set it in the data-service.ts file.');
+    }
 
-    // const response = await fetch(
-    //   "https://us-central1-give-them-a-voice.cloudfunctions.net/analyze",
-    //   {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(analysis),
-    //   }
-    // );
-    // return await response.json();
+    const request ={
+      'model': 'gpt-3.5-turbo',
+      'messages': [{ 'role': 'user', 'content': analysis.prompt + text }],
+    };
+
+    const response = await fetch(
+      "https://api.openai.com/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${this.OPENAI_API_KEY}`
+        },
+        body: JSON.stringify(request),
+      }
+    );
+    const responseJson = await response.json();
+    return responseJson;
   }
 }
 
