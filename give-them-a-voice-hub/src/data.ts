@@ -41,11 +41,16 @@ export const ANALYSIS = [
   {
     name: "Possible actions",
     prompt:
-      "Create a short list (maximum 3 items) of meaningful and reasonable actions for a person in Democratic Republic of Congo. Write it in first person, base it on this text:\n",
+      "Create a short list (maximum 3 items) of meaningful and reasonable actions for a person in Democratic Republic of Congo. Write it in first person, keep it short, base it on this text:\n",
   },
   {
     name: "Find help",
     prompt:
-      'Based on the text below, select exactly three items from this array ["health", "finances", "pollution", "poverty", "education", "domestic violence", "corruption",  "other"] and rank them. Return as comma separated string. Text:',
+      'Based on the following text, recommend exactly two professionals that could help. Keep it short. Text:',
   },
+  // {
+  //   name: "Find help",
+  //   prompt:
+  //     'Based on the text below, select exactly three items from this array ["health", "finances", "pollution", "poverty", "education", "domestic violence", "corruption",  "other"] and rank them. Return as comma separated string. Text:',
+  // },
 ];

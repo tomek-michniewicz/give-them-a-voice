@@ -8,11 +8,11 @@ This project was created during [Avanade International Women's Day Hackathon](ht
 
 The inspiration for this project was a podcast with Siddharth Kara - an author of "Cobalt Red: How The Blood of The Congo Powers Our Lives".
 
-There was an untold story of poverty, exploitation and human tragedy in Congo, happening right now. There are people, many of them women, young women and kids living and working in sub-human conditions.
+There is an untold story of poverty, exploitation and human tragedy in Congo, happening right now. There are people, many of them women, young women and kids, living and working in sub-human conditions.
 
 >"An increasing number of women, girls, and boys live in these [mining] camps and work at the mining sites throughout all stages of the operating process. The living conditions of these camps are inhumane and the human rights violations are extensive. There is no safe access to water, food, education, and health, including sexual and reproductive health. Women often engage in the most toxic job at the mining sites: “droumage” - crushing, sorting, washing, processing, and/or selling minerals."
 
-As this hackathon theme is "taking action" and is organized in the month of "International Women's Day" - I wanted to explore the question if A-powered solution could, at least in  some small way, help with this very complicated problem.
+As this hackathon theme is "taking action" and is organized in the month of "International Women's Day" - I wanted to explore the question if A-powered solution could, at least in  some small way, help with this very complicated problem and therefore improve at least a  bit the quality of life of many women that live in those kind of environment today.
 
 #### Internet sources
 

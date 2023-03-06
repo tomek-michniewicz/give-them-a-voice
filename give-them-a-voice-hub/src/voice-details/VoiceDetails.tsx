@@ -9,8 +9,10 @@ import {
   Tooltip,
   useToast,
 } from "@chakra-ui/react";
+import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
-import { ANALYSIS, VOICES } from "../data";
+import { voiceRecordingsAtom } from "../App";
+import { ANALYSIS } from "../data";
 import { AnalysisUI, dataService } from "../services/data-service";
 
 import "./VoiceDetails.css";
@@ -23,6 +25,7 @@ function VoiceDetails(props: VoiceDetailsProps) {
   const [analysisList, setAnalysisList] = useState<AnalysisUI[]>([]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const toast = useToast();
+  const [voiceRecordings ] = useAtom<any[]>(voiceRecordingsAtom);
 
   useEffect(() => {
     setAnalysisList([]);
@@ -37,7 +40,7 @@ function VoiceDetails(props: VoiceDetailsProps) {
     );
   }
 
-  const voice = VOICES.find((voice) => voice.uid === props.uid);
+  const voice = voiceRecordings.find((voice) => voice.uid === props.uid);
   const transcriptionParagraphs = voice?.transcription.split("\n");
 
   return (
@@ -51,7 +54,7 @@ function VoiceDetails(props: VoiceDetailsProps) {
       <Heading as="h4" size="md" mt={8} mb={4}>
         Transcription
       </Heading>
-      {transcriptionParagraphs?.map((paragraph, idx) => (
+      {transcriptionParagraphs?.map((paragraph: string, idx: number) => (
         <Text mb={2} key={idx}>
           {paragraph}
         </Text>

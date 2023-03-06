@@ -1,12 +1,29 @@
-import { Box, Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, Container, Flex, Heading } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { atom, useAtom } from 'jotai'
 import "./App.css";
 import VoiceDetails from "./voice-details/VoiceDetails";
 import VoicesList from "./voices-list/VoicesList";
+import { db } from "./services/firebase-service";
+import { collection, onSnapshot } from "firebase/firestore";
+
+export const voiceRecordingsAtom = atom([])
 
 function App() {
-  // Uses useState hook to store the selected voice
   const [selectedVoiceUid, setSelectedVoiceUid] = useState<string | null>(null);
+  const [voiceRecordings, setVoiceRecordings ] = useAtom<any[]>(voiceRecordingsAtom);
+
+  useEffect(() => {
+    onSnapshot(collection(db, "voices"), (snap) => {
+      const results = snap.docs.map((doc) => {
+        return doc.data();
+      });
+      setVoiceRecordings(results);
+    });
+
+  }, []);
+
+
 
   const onSelect = (uid: string) => {
     setSelectedVoiceUid(uid);

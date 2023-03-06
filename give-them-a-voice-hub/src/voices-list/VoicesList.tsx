@@ -1,17 +1,17 @@
 import {
   Box, Text,
 } from "@chakra-ui/react";
+import { useAtom } from "jotai";
 import { useState } from "react";
-import { VOICES } from "../data";
+import { voiceRecordingsAtom } from "../App";
 
 export interface VoicesListProps {
   onSelect: (uid: string) => void
 }
 
 function VoicesList(props: VoicesListProps) {
-
-  //usestate hook to store the selected voice uid
   const [selectedVoiceUid, setSelectedVoiceUid] = useState<string | null>(null);
+  const [voiceRecordings ] = useAtom<any[]>(voiceRecordingsAtom);
 
   const onSelect = (uid: string) => {
     props.onSelect(uid)
@@ -20,7 +20,7 @@ function VoicesList(props: VoicesListProps) {
 
   return (
     <Box>
-      {VOICES.map((voice) => (
+      {voiceRecordings.map((voice) => (
         <Box key={voice.uid} className="clickable" px={3} py={2} bgColor={(selectedVoiceUid == voice.uid) ? "blue.50" : "none"} onClick={() => onSelect(voice.uid)}>
           <Text pb={1} fontWeight="600" color={"blue.600"}>
             {voice.date}
